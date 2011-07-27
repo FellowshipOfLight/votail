@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2011-07-08T11:09:08</date>
+  <millis>1310119748440</millis>
+  <sequence>1</sequence>
+  <logger>ie.votail.uilioch.UniversalTestGenerator</logger>
+  <level>INFO</level>
+  <class>ie.votail.uilioch.UniversalTestGenerator</class>
+  <method>createBallotBoxes</method>
+  <thread>10</thread>
+  <message>2 candidates (Loser,Winner)</message>
+</record>
+</log>
