@@ -1,0 +1,86 @@
+--
+-- VOTAIL
+--
+-- Copyright (c) 2008-9 Dermot Cochran
+--
+-- Permission is hereby granted, free of charge, to any person obtaining a copy
+-- of this software and associated documentation files (the "Software"), to deal
+-- in the Software without restriction, including without limitation the rights
+-- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-- copies of the Software, and to permit persons to whom the Software is
+-- furnished to do so, subject to the following conditions:
+--
+-- The above copyright notice and this permission notice shall be included in
+-- all copies or substantial portions of the Software.
+--
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-- THE SOFTWARE.
+--
+
+-- See diagrams/DailBallotCounting
+
+scenario_chart VOTAIL
+explanation 
+  "Scenarios for ballot counting"
+scenario
+  "01: READY_TO_START"
+description
+  "Ballots, candidate and election data have been loaded"
+scenario
+  "02: NO_SEATS_FILLED_YET"
+description
+  "No candidates have been elected so far"
+scenario 
+  "03: CANDIDATE_REACHES_QUOTA"
+description
+  "One or more candidates achieve the minimum quota of votes"
+scenario
+  "04: CANDIDATE_ELECTED"
+description
+  "The highest continuing candidate with quota is deemed to be elected"
+scenario
+  "05: NO_SURPLUS_AVAILABLE"
+description
+  "There is no surplus available for distribution"
+scenario
+  "06: SURPLUS_AVAILABLE"
+description
+  "There is at least one surplus availble for distribution"
+scenario
+  "10: READY_TO_MOVE_BALLOTS"
+description
+  "The number of ballots for transfer to each candidate has been determined"
+scenario 
+  "11: LOWEST_CANDIDATE_EXCLUDED"
+description
+  "Exclude one or more of the lowest continuing candidates"
+scenario
+  "12: READY_FOR_NEXT_ROUND"
+description
+  "Ballots have been transfered form one candidate to one or more others"
+scenario
+  "13: FILLING_OF_LAST_SEAT"
+description
+  "There is one remaining seat and at least two continuing candidates, or the number of continuing candidates is just one more than the number of remaining seats"
+scenario
+  "14: MORE_CANDIDATES_THAN_SEATS"
+description
+  "There are more continuing candidates than remaining seats"
+scenario
+  "15: SEATS_REMAINING"
+description
+  "There is at least one vacancy yet to be filled"
+scenario
+  "16: ALL_SEATS_FILLED"
+description
+  "The number of continuing candidates equals the number of seats remaining"
+scenario
+  "18: CONTINUING_CANDIDATES_EQUAL_REMAINING_SEATS"
+description
+  "The number of continuing candidates equals the number of remaining seats; all continuing candidates are deemed elected"
+end

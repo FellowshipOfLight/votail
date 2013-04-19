@@ -1,0 +1,76 @@
+--
+-- Votail - Irish Proportional Representation by Single Transferable Vote
+--
+-- Copyright (c) 2009 Dermot Cochran
+--
+-- Permission is hereby granted, free of charge, to any person obtaining a copy
+-- of this software and associated documentation files (the "Software"), to deal
+-- in the Software without restriction, including without limitation the rights
+-- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-- copies of the Software, and to permit persons to whom the Software is
+-- furnished to do so, subject to the following conditions:
+--
+-- The above copyright notice and this permission notice shall be included in
+-- all copies or substantial portions of the Software.
+--
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-- THE SOFTWARE.
+--
+
+-- Internal (outgoing) events
+-- See diagrams/DailBallotCounting
+
+event_chart VOTAIL
+outgoing
+part
+  "2/2"
+event
+  "A: The quota is calculated"
+involves
+  BALLOT_BOX, BALLOT_COUNTING
+event
+  "B: The highest continuing candidate is found"
+involves
+  BALLOT_COUNTING
+event
+  "C: The surplus, from an elected candidate, is calculated"
+involves
+  BALLOT_COUNTING
+event 
+  "D: The number of votes for transfer (from surplus) are calculated"
+involves
+  BALLOT_COUNTING
+event
+   "H: Transfers, from an excluded candidate, are calculated"
+involves
+   BALLOT_COUNTING
+event
+   "J: The lowest continuing candidate is selected for exclusion"
+involves
+   BALLOT_COUNTING
+event
+   "K: The number of continuing candidates is recalculated"
+involves
+   BALLOT_COUNTING, CANDIDATE
+event
+   "L: The selected ballots are moved to the next continuing preference candidate"
+involves
+   BALLOT, BALLOT_COUNTING
+event
+   "M: The number of remaining seats is checked"
+involves
+   BALLOT_COUNTING
+event
+   "N: The remaining candidates are deemed elected"
+involves
+   BALLOT_COUNTING, CANDIDATE
+event
+   "P: The counting is closed and final result declared"
+involves
+   BALLOT_COUNTING
+end
